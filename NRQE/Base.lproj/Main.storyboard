@@ -18,52 +18,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DHR-av-MRH">
-                                <rect key="frame" x="20" y="20" width="280" height="280"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DHR-av-MRH">
+                                <rect key="frame" x="20" y="40" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DHR-av-MRH" secondAttribute="height" multiplier="1:1" id="O5b-im-972"/>
+                                    <constraint firstAttribute="width" secondItem="DHR-av-MRH" secondAttribute="height" multiplier="1:1" id="HIV-vK-gY6"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WST-aC-wfx">
-                                <rect key="frame" x="137" y="308" width="46" height="30"/>
-                                <state key="normal" title="Import"/>
-                                <connections>
-                                    <action selector="importTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eKH-iz-u91"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-d7-ba3">
-                                <rect key="frame" x="125" y="346" width="71" height="30"/>
-                                <state key="normal" title="Transform"/>
-                                <connections>
-                                    <action selector="transformTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6hM-5w-AHB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shd-2s-hAQ">
-                                <rect key="frame" x="137" y="384" width="46" height="30"/>
-                                <state key="normal" title="Export"/>
-                                <connections>
-                                    <action selector="exportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zjg-nW-3LC"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2po-A5-Xfm">
+                                <rect key="frame" x="20" y="340" width="280" height="174"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WST-aC-wfx">
+                                        <rect key="frame" x="13" y="0.0" width="255" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="255" id="e8H-J1-mse"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Import Nike Running Image">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="importNRImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFp-Ev-kj9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-d7-ba3">
+                                        <rect key="frame" x="19" y="46" width="242" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="242" id="Ezd-3n-CkB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Import background image">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="importBackgroundImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHK-am-xA6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shd-2s-hAQ">
+                                        <rect key="frame" x="70" y="92" width="140" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="5kv-PJ-qG9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Merge Images">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mergeImagesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7n-A9-5mV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPa-Pb-C4G">
+                                        <rect key="frame" x="70" y="138" width="140" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="vzc-es-mbo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Export Image">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="exportImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VH-AO-vVJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c8f-d7-ba3" firstAttribute="top" secondItem="WST-aC-wfx" secondAttribute="bottom" constant="8" id="5aH-BG-iXm"/>
-                            <constraint firstItem="WST-aC-wfx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Azd-2v-Xeq"/>
-                            <constraint firstItem="c8f-d7-ba3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BZs-2Y-Rnj"/>
-                            <constraint firstItem="shd-2s-hAQ" firstAttribute="top" secondItem="c8f-d7-ba3" secondAttribute="bottom" constant="8" id="FV8-Fo-SGU"/>
-                            <constraint firstItem="DHR-av-MRH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="HhI-3O-pJA"/>
-                            <constraint firstItem="WST-aC-wfx" firstAttribute="top" secondItem="DHR-av-MRH" secondAttribute="bottom" constant="8" id="eP4-NM-mlH"/>
-                            <constraint firstAttribute="trailing" secondItem="DHR-av-MRH" secondAttribute="trailing" constant="20" id="gCj-gE-tuy"/>
-                            <constraint firstItem="shd-2s-hAQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qzc-fd-VQd"/>
-                            <constraint firstItem="DHR-av-MRH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sUP-sq-EPf"/>
+                            <constraint firstItem="2po-A5-Xfm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5GJ-iZ-9ZS"/>
+                            <constraint firstItem="DHR-av-MRH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="GMy-6n-hdV"/>
+                            <constraint firstAttribute="trailing" secondItem="DHR-av-MRH" secondAttribute="trailing" constant="20" id="jel-Ao-OZ1"/>
+                            <constraint firstItem="DHR-av-MRH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="wSc-gH-mCy"/>
+                            <constraint firstAttribute="trailing" secondItem="2po-A5-Xfm" secondAttribute="trailing" constant="20" id="wmO-N7-nJB"/>
+                            <constraint firstItem="2po-A5-Xfm" firstAttribute="top" secondItem="DHR-av-MRH" secondAttribute="bottom" constant="20" id="wyL-st-lag"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="exportButton" destination="shd-2s-hAQ" id="e7p-Eb-4jJ"/>
-                        <outlet property="imageView" destination="DHR-av-MRH" id="xNe-eH-6hM"/>
-                        <outlet property="importButton" destination="WST-aC-wfx" id="YPA-Xu-n2e"/>
-                        <outlet property="transformButton" destination="c8f-d7-ba3" id="6lJ-c4-iPs"/>
+                        <outlet property="exportImageButton" destination="UPa-Pb-C4G" id="Ybm-ie-Uwo"/>
+                        <outlet property="imageView" destination="DHR-av-MRH" id="SPs-yD-JAV"/>
+                        <outlet property="importBackgroundImageButton" destination="c8f-d7-ba3" id="mUX-dC-CUa"/>
+                        <outlet property="importNRImageButton" destination="WST-aC-wfx" id="VMN-lR-bp1"/>
+                        <outlet property="mergeImagesButton" destination="shd-2s-hAQ" id="3Vs-30-W6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
