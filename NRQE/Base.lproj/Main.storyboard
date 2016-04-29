@@ -18,123 +18,138 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DHR-av-MRH">
-                                <rect key="frame" x="20" y="40" width="280" height="280"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DHR-av-MRH" secondAttribute="height" multiplier="1:1" id="HIV-vK-gY6"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Runners Background" translatesAutoresizingMaskIntoConstraints="NO" id="E2e-qg-o72">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2po-A5-Xfm">
-                                <rect key="frame" x="20" y="340" width="280" height="174"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WST-aC-wfx">
-                                        <rect key="frame" x="13" y="0.0" width="255" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="255" id="e8H-J1-mse"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Import Nike Running Image">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="importNRImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFp-Ev-kj9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-d7-ba3">
-                                        <rect key="frame" x="19" y="46" width="242" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="242" id="Ezd-3n-CkB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Import background image">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="importBackgroundImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fHK-am-xA6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shd-2s-hAQ">
-                                        <rect key="frame" x="70" y="92" width="140" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="5kv-PJ-qG9"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Merge Images">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="mergeImagesButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7n-A9-5mV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPa-Pb-C4G">
-                                        <rect key="frame" x="70" y="138" width="140" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="vzc-es-mbo"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Export Image">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="exportImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2VH-AO-vVJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCs-wu-5qj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aAT-le-0a9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wug-md-tMR">
+                                            <rect key="frame" x="141" y="523" width="39" height="37"/>
+                                        </pageControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Wug-md-tMR" secondAttribute="bottom" constant="8" id="TTi-3U-Geg"/>
+                                        <constraint firstItem="Wug-md-tMR" firstAttribute="centerX" secondItem="aAT-le-0a9" secondAttribute="centerX" id="xC8-F2-UJC"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2po-A5-Xfm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5GJ-iZ-9ZS"/>
-                            <constraint firstItem="DHR-av-MRH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="GMy-6n-hdV"/>
-                            <constraint firstAttribute="trailing" secondItem="DHR-av-MRH" secondAttribute="trailing" constant="20" id="jel-Ao-OZ1"/>
-                            <constraint firstItem="DHR-av-MRH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="wSc-gH-mCy"/>
-                            <constraint firstAttribute="trailing" secondItem="2po-A5-Xfm" secondAttribute="trailing" constant="20" id="wmO-N7-nJB"/>
-                            <constraint firstItem="2po-A5-Xfm" firstAttribute="top" secondItem="DHR-av-MRH" secondAttribute="bottom" constant="20" id="wyL-st-lag"/>
+                            <constraint firstItem="kCs-wu-5qj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2uc-fC-ceb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="E2e-qg-o72" secondAttribute="bottom" id="3Tn-ZR-LCD"/>
+                            <constraint firstItem="E2e-qg-o72" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9nS-Xs-rRk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kCs-wu-5qj" secondAttribute="bottom" id="EtB-Yq-Cdz"/>
+                            <constraint firstItem="kCs-wu-5qj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="MFZ-iF-aFA"/>
+                            <constraint firstItem="E2e-qg-o72" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="NSb-Xo-i3q"/>
+                            <constraint firstAttribute="trailing" secondItem="E2e-qg-o72" secondAttribute="trailing" id="gPW-dv-AGW"/>
+                            <constraint firstAttribute="trailing" secondItem="kCs-wu-5qj" secondAttribute="trailing" id="kqj-ys-LgC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="exportImageButton" destination="UPa-Pb-C4G" id="Ybm-ie-Uwo"/>
-                        <outlet property="imageView" destination="DHR-av-MRH" id="SPs-yD-JAV"/>
-                        <outlet property="importBackgroundImageButton" destination="c8f-d7-ba3" id="mUX-dC-CUa"/>
-                        <outlet property="importNRImageButton" destination="WST-aC-wfx" id="VMN-lR-bp1"/>
-                        <outlet property="mergeImagesButton" destination="shd-2s-hAQ" id="3Vs-30-W6f"/>
+                        <outlet property="pageControl" destination="Wug-md-tMR" id="FdL-in-6Du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172.80000000000001" y="363.51999999999998"/>
+            <point key="canvasLocation" x="174" y="376"/>
+        </scene>
+        <!--Reusable View Controller-->
+        <scene sceneID="e8g-d0-gF8">
+            <objects>
+                <viewController storyboardIdentifier="ReusableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZzT-cO-m4M" customClass="ReusableViewController" customModule="NRQE" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dlK-pL-2E5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ADv-eJ-zbo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="70X-aR-NwL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rrl-LC-siS">
+                                <rect key="frame" x="20" y="70" width="280" height="412"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-Bt-TBG">
+                                        <rect key="frame" x="109" y="0.0" width="61" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M5d-2f-Gt1">
+                                        <rect key="frame" x="0.0" y="45" width="280" height="0.0"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3j-3y-ZZC">
+                                        <rect key="frame" x="0.0" y="60" width="280" height="280"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="z3j-3y-ZZC" secondAttribute="height" multiplier="1:1" id="zc0-XI-SPz"/>
+                                        </constraints>
+                                        <state key="normal" image="Plus"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="importButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="HLg-kr-ZZr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ien-pA-eLK">
+                                        <rect key="frame" x="105" y="370" width="70" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="gtz-ZT-bMB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="rzo-M7-M3P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="M5d-2f-Gt1" firstAttribute="width" secondItem="rrl-LC-siS" secondAttribute="width" id="PUY-Xg-0Ww"/>
+                                    <constraint firstItem="z3j-3y-ZZC" firstAttribute="width" secondItem="rrl-LC-siS" secondAttribute="width" id="ipV-Fc-SWR"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rrl-LC-siS" secondAttribute="trailing" constant="20" id="AzE-UR-1Xm"/>
+                            <constraint firstItem="rrl-LC-siS" firstAttribute="top" secondItem="dlK-pL-2E5" secondAttribute="bottom" constant="50" id="Fwp-TB-ItV"/>
+                            <constraint firstItem="rrl-LC-siS" firstAttribute="leading" secondItem="70X-aR-NwL" secondAttribute="leading" constant="20" id="toq-7v-xf9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="M5d-2f-Gt1" id="C4R-Ui-pII"/>
+                        <outlet property="importButton" destination="z3j-3y-ZZC" id="gUp-Sd-V0p"/>
+                        <outlet property="nextButton" destination="Ien-pA-eLK" id="Yl4-tw-wid"/>
+                        <outlet property="textLabel" destination="fPI-Bt-TBG" id="4AF-KH-4b4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1CD-94-Ydo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="376"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Plus" width="50" height="51"/>
+        <image name="Runners Background" width="375" height="667"/>
+    </resources>
 </document>

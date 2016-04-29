@@ -12,6 +12,7 @@
 		FA1E860A1CD0EC8900001E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E86081CD0EC8900001E5E /* Main.storyboard */; };
 		FA1E860C1CD0EC8900001E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1E860B1CD0EC8900001E5E /* Assets.xcassets */; };
 		FA1E860F1CD0EC8900001E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1E860D1CD0EC8900001E5E /* LaunchScreen.storyboard */; };
+		FA1E86171CD2D9BA00001E5E /* ReusableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E86161CD2D9BA00001E5E /* ReusableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FA1E860B1CD0EC8900001E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA1E860E1CD0EC8900001E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA1E86101CD0EC8900001E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA1E86161CD2D9BA00001E5E /* ReusableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				FA1E86041CD0EC8900001E5E /* AppDelegate.swift */,
 				FA1E86061CD0EC8900001E5E /* ViewController.swift */,
+				FA1E86161CD2D9BA00001E5E /* ReusableViewController.swift */,
 				FA1E86081CD0EC8900001E5E /* Main.storyboard */,
 				FA1E860B1CD0EC8900001E5E /* Assets.xcassets */,
 				FA1E860D1CD0EC8900001E5E /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1E86071CD0EC8900001E5E /* ViewController.swift in Sources */,
+				FA1E86171CD2D9BA00001E5E /* ReusableViewController.swift in Sources */,
 				FA1E86051CD0EC8900001E5E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
