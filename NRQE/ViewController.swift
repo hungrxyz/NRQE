@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 	
 	var currentIndex: Int?
 	var pendingIndex: Int?
+	var availablePages = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,9 +26,6 @@ class ViewController: UIViewController {
 			let page = storyboard!.instantiateViewControllerWithIdentifier("ReusableViewController") as! ReusableViewController
 			page.index = i
 			pages.append(page)
-		}
-		for page in pages {
-			page.pages = pages
 		}
 		
 		pageContainer = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
@@ -41,6 +39,17 @@ class ViewController: UIViewController {
 		pageControl.numberOfPages = pages.count
 		view.bringSubviewToFront(pageControl)
 	}
+	
+	func resetPages(index: Int) {
+		availablePages = index
+		pageContainer.reloadInputViews()
+	}
+	
+	func nextPage(index: Int) {
+		pageContainer.setViewControllers([pages[index]], direction: .Forward, animated: true, completion: nil)
+		pageContainer.reloadInputViews()
+		pageControl.currentPage = index
+	}
 }
 
 extension ViewController: UIPageViewControllerDataSource {
@@ -52,11 +61,14 @@ extension ViewController: UIPageViewControllerDataSource {
 			return nil
 		}
 		let nextIndex = abs((currentIndex + 1) % pages.count)
+		if nextIndex > availablePages {
+			return nil
+		}
 		return pages[nextIndex]
 	}
 	
 	func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-		
+
 		let currentIndex = pages.indexOf(viewController as! ReusableViewController)!
 		if currentIndex == 0 {
 			return nil
@@ -83,12 +95,3 @@ extension ViewController: UIPageViewControllerDelegate {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-

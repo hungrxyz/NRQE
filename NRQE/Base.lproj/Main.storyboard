@@ -71,69 +71,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rrl-LC-siS">
-                                <rect key="frame" x="20" y="70" width="280" height="412"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-Bt-TBG">
-                                        <rect key="frame" x="109" y="0.0" width="61" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M5d-2f-Gt1">
-                                        <rect key="frame" x="0.0" y="45" width="280" height="0.0"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3j-3y-ZZC">
-                                        <rect key="frame" x="0.0" y="60" width="280" height="280"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="z3j-3y-ZZC" secondAttribute="height" multiplier="1:1" id="zc0-XI-SPz"/>
-                                        </constraints>
-                                        <state key="normal" image="Plus"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="importButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="HLg-kr-ZZr"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ien-pA-eLK">
-                                        <rect key="frame" x="105" y="370" width="70" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="gtz-ZT-bMB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="nextButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="rzo-M7-M3P"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-Bt-TBG">
+                                <rect key="frame" x="129" y="84" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M5d-2f-Gt1">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstItem="M5d-2f-Gt1" firstAttribute="width" secondItem="rrl-LC-siS" secondAttribute="width" id="PUY-Xg-0Ww"/>
-                                    <constraint firstItem="z3j-3y-ZZC" firstAttribute="width" secondItem="rrl-LC-siS" secondAttribute="width" id="ipV-Fc-SWR"/>
+                                    <constraint firstAttribute="width" secondItem="M5d-2f-Gt1" secondAttribute="height" multiplier="1:1" id="ocO-53-XjC"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ien-pA-eLK">
+                                <rect key="frame" x="125" y="454" width="70" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="9iY-95-0yS"/>
+                                    <constraint firstAttribute="width" constant="70" id="gtz-ZT-bMB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="rzo-M7-M3P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3j-3y-ZZC">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z3j-3y-ZZC" secondAttribute="height" multiplier="1:1" id="zc0-XI-SPz"/>
+                                </constraints>
+                                <state key="normal" image="Plus"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="importButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="HLg-kr-ZZr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="rrl-LC-siS" secondAttribute="trailing" constant="20" id="AzE-UR-1Xm"/>
-                            <constraint firstItem="rrl-LC-siS" firstAttribute="top" secondItem="dlK-pL-2E5" secondAttribute="bottom" constant="50" id="Fwp-TB-ItV"/>
-                            <constraint firstItem="rrl-LC-siS" firstAttribute="leading" secondItem="70X-aR-NwL" secondAttribute="leading" constant="20" id="toq-7v-xf9"/>
+                            <constraint firstItem="Ien-pA-eLK" firstAttribute="centerX" secondItem="70X-aR-NwL" secondAttribute="centerX" id="9qG-AM-dlD"/>
+                            <constraint firstAttribute="trailing" secondItem="M5d-2f-Gt1" secondAttribute="trailing" constant="20" id="I5V-Kb-XlY"/>
+                            <constraint firstItem="z3j-3y-ZZC" firstAttribute="top" secondItem="fPI-Bt-TBG" secondAttribute="bottom" constant="30" id="K7J-tq-dOe"/>
+                            <constraint firstItem="z3j-3y-ZZC" firstAttribute="leading" secondItem="70X-aR-NwL" secondAttribute="leading" constant="20" id="TSs-kc-rdi"/>
+                            <constraint firstItem="Ien-pA-eLK" firstAttribute="top" secondItem="z3j-3y-ZZC" secondAttribute="bottom" constant="30" id="eae-y0-qqh"/>
+                            <constraint firstItem="fPI-Bt-TBG" firstAttribute="centerX" secondItem="70X-aR-NwL" secondAttribute="centerX" id="gLP-qw-5fa"/>
+                            <constraint firstItem="M5d-2f-Gt1" firstAttribute="centerY" secondItem="70X-aR-NwL" secondAttribute="centerY" id="mam-7P-sxy"/>
+                            <constraint firstItem="z3j-3y-ZZC" firstAttribute="centerY" secondItem="70X-aR-NwL" secondAttribute="centerY" id="ng7-M3-Xha"/>
+                            <constraint firstAttribute="trailing" secondItem="z3j-3y-ZZC" secondAttribute="trailing" constant="20" id="tZE-P8-z5E"/>
+                            <constraint firstItem="M5d-2f-Gt1" firstAttribute="leading" secondItem="70X-aR-NwL" secondAttribute="leading" constant="20" id="wwd-zT-4Pl"/>
                         </constraints>
                     </view>
                     <connections>

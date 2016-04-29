@@ -15,10 +15,9 @@ class ReusableViewController: UIViewController {
 	@IBOutlet weak var importButton: UIButton!
 	@IBOutlet weak var nextButton: UIButton!
 	
+	var rootViewController: ViewController!
 	let texts = ["Import Nike Running image", "Import background image", "Export image"]
 	var index: Int!
-	var pages: [ReusableViewController]!
-	var image: UIImage!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,6 +28,10 @@ class ReusableViewController: UIViewController {
 		nextButton.layer.borderColor = UIColor.whiteColor().CGColor
 		
 		nextButton.hidden = true
+
+		if let rootVC = (UIApplication.sharedApplication().delegate as! AppDelegate).window!.rootViewController as? ViewController {
+			rootViewController = rootVC
+		}
 	}
 	
 	@IBAction func importButtonTapped(sender: AnyObject) {
@@ -36,56 +39,17 @@ class ReusableViewController: UIViewController {
 		imagePickerController.sourceType = .PhotoLibrary
 		imagePickerController.delegate = self
 		
-		presentViewController(imagePickerController, animated: true, completion: nil)
+		rootViewController.presentViewController(imagePickerController, animated: true, completion: nil)
 	}
 	
 	@IBAction func nextButtonTapped(sender: AnyObject) {
-		print("Next")
+		rootViewController.nextPage(index)
 	}
 	
-	func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {
-		if let error = error {
-			print(error)
-		} else {
-			print("Saved")
-		}
-	}
-	
-	func transform(image: UIImage) {
-		
-		let context = CIContext(options: nil)
-		let ciImage = CIImage(CGImage: image.CGImage!)
-		
-		let filter = CIFilter(name: "CIMaskToAlpha")!
-		filter.setDefaults()
-		filter.setValue(ciImage, forKey: kCIInputImageKey)
-		
-		let result = filter.outputImage!
-		
-		let cgImage = context.createCGImage(result, fromRect: result.extent)
-		let transformedImage = UIImage(CGImage: cgImage)
-		
-		imageView.image = transformedImage
+	func showImage() {
 		importButton.hidden = true
 		imageView.hidden = false
-	}
-	
-	func mergeImages() {
-		//		if let backgroundImage = backgroundImage, overlayImage = overlayImage {
-		//			UIGraphicsBeginImageContext(backgroundImage.size)
-		//
-		//			let areaSize = CGRect(x: 0, y: 0, width: backgroundImage.size.width, height: backgroundImage.size.height)
-		//			backgroundImage.drawInRect(areaSize)
-		//			overlayImage.drawInRect(areaSize)
-		//
-		////			imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-		//			UIGraphicsEndImageContext()
-		////			exportImageButton.hidden = false
-		//		}
-	}
-	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		print(segue)
+		nextButton.hidden = false
 	}
 }
 
@@ -94,14 +58,16 @@ extension ReusableViewController: UIImagePickerControllerDelegate, UINavigationC
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
 		
 		switch index {
-		case 0:
-			print("Yes")
-			transform(image)
 		case 1:
-			imageView.image = image
+			imageView.image = ImageProcessor.sharedInstance.transform(image)
+			showImage()
+		case 2:
+			imageView.image = ImageProcessor.sharedInstance.mergeImages(image)
+			showImage()
 		default:
 			print("Wierd index")
 		}
-		dismissViewControllerAnimated(true, completion: nil)
+		rootViewController.resetPages(index)
+		rootViewController.dismissViewControllerAnimated(true, completion: nil)
 	}
 }
