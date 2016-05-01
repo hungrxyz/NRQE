@@ -84,10 +84,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ien-pA-eLK">
-                                <rect key="frame" x="125" y="454" width="70" height="42"/>
+                                <rect key="frame" x="126.5" y="454" width="67" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="9iY-95-0yS"/>
-                                    <constraint firstAttribute="width" constant="70" id="gtz-ZT-bMB"/>
+                                    <constraint firstAttribute="width" constant="67" id="DFM-HY-pkO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Next">
@@ -103,6 +103,28 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="rzo-M7-M3P"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6m-fD-sXW">
+                                <rect key="frame" x="119.5" y="444" width="80" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Rxf-dD-Z6j"/>
+                                    <constraint firstAttribute="height" constant="42" id="Z2S-po-axm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="ZzT-cO-m4M" eventType="touchUpInside" id="8uR-8y-b6r"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3j-3y-ZZC">
@@ -126,6 +148,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="T6m-fD-sXW" firstAttribute="centerX" secondItem="70X-aR-NwL" secondAttribute="centerX" id="4g1-1Y-exn"/>
                             <constraint firstItem="Ien-pA-eLK" firstAttribute="centerX" secondItem="70X-aR-NwL" secondAttribute="centerX" id="9qG-AM-dlD"/>
                             <constraint firstAttribute="trailing" secondItem="M5d-2f-Gt1" secondAttribute="trailing" constant="20" id="I5V-Kb-XlY"/>
                             <constraint firstItem="z3j-3y-ZZC" firstAttribute="top" secondItem="fPI-Bt-TBG" secondAttribute="bottom" constant="30" id="K7J-tq-dOe"/>
@@ -134,6 +157,7 @@
                             <constraint firstItem="fPI-Bt-TBG" firstAttribute="centerX" secondItem="70X-aR-NwL" secondAttribute="centerX" id="gLP-qw-5fa"/>
                             <constraint firstItem="M5d-2f-Gt1" firstAttribute="centerY" secondItem="70X-aR-NwL" secondAttribute="centerY" id="mam-7P-sxy"/>
                             <constraint firstItem="z3j-3y-ZZC" firstAttribute="centerY" secondItem="70X-aR-NwL" secondAttribute="centerY" id="ng7-M3-Xha"/>
+                            <constraint firstItem="T6m-fD-sXW" firstAttribute="top" secondItem="z3j-3y-ZZC" secondAttribute="bottom" constant="20" id="qDX-9s-Bre"/>
                             <constraint firstAttribute="trailing" secondItem="z3j-3y-ZZC" secondAttribute="trailing" constant="20" id="tZE-P8-z5E"/>
                             <constraint firstItem="M5d-2f-Gt1" firstAttribute="leading" secondItem="70X-aR-NwL" secondAttribute="leading" constant="20" id="wwd-zT-4Pl"/>
                         </constraints>
@@ -142,6 +166,7 @@
                         <outlet property="imageView" destination="M5d-2f-Gt1" id="C4R-Ui-pII"/>
                         <outlet property="importButton" destination="z3j-3y-ZZC" id="gUp-Sd-V0p"/>
                         <outlet property="nextButton" destination="Ien-pA-eLK" id="Yl4-tw-wid"/>
+                        <outlet property="shareButton" destination="T6m-fD-sXW" id="rSR-eX-mt3"/>
                         <outlet property="textLabel" destination="fPI-Bt-TBG" id="4AF-KH-4b4"/>
                     </connections>
                 </viewController>

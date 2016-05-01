@@ -34,18 +34,18 @@ class ImageProcessor {
 		return transformedImage
 	}
 
-	func mergeImages(image: UIImage) -> UIImage {
+	func mergeImages() -> UIImage {
 		
-		UIGraphicsBeginImageContext(image.size)
+		UIGraphicsBeginImageContext(backgroundImage.size)
 		
-		let areaSize = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-		image.drawInRect(areaSize)
+		let areaSize = CGRect(x: 0, y: 0, width: backgroundImage.size.width, height: backgroundImage.size.height)
+		backgroundImage.drawInRect(areaSize)
 		overlay.drawInRect(areaSize)
 		
-		backgroundImage = UIGraphicsGetImageFromCurrentImageContext()
+		let mergedImage = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
 		
-		return backgroundImage
+		return mergedImage
 	}
 	
 	func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {

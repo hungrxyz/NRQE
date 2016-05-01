@@ -14,6 +14,7 @@ class ReusableViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var importButton: UIButton!
 	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet weak var shareButton: UIButton!
 	
 	var rootViewController: ViewController!
 	let texts = ["Import Nike Running image", "Import background image", "Export image"]
@@ -22,10 +23,18 @@ class ReusableViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		if index == 3 {
+			imageView.image = ImageProcessor.sharedInstance.mergeImages()
+			showImage()
+			nextButton.hidden = true
+			shareButton.hidden = false
+		}
+		
 		textLabel.text = texts[index - 1]
 		
 		importButton.layer.borderColor = UIColor.whiteColor().CGColor
 		nextButton.layer.borderColor = UIColor.whiteColor().CGColor
+		shareButton.layer.borderColor = UIColor.whiteColor().CGColor
 		
 		nextButton.hidden = true
 
@@ -46,6 +55,11 @@ class ReusableViewController: UIViewController {
 		rootViewController.nextPage(index)
 	}
 	
+	@IBAction func shareButtonTapped(sender: AnyObject) {
+		let activityController = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: nil)
+		rootViewController.presentViewController(activityController, animated: true, completion: nil)
+	}
+	
 	func showImage() {
 		importButton.hidden = true
 		imageView.hidden = false
@@ -62,7 +76,8 @@ extension ReusableViewController: UIImagePickerControllerDelegate, UINavigationC
 			imageView.image = ImageProcessor.sharedInstance.transform(image)
 			showImage()
 		case 2:
-			imageView.image = ImageProcessor.sharedInstance.mergeImages(image)
+			ImageProcessor.sharedInstance.backgroundImage = image
+			imageView.image = image
 			showImage()
 		default:
 			print("Wierd index")
