@@ -23,12 +23,7 @@ class ReusableViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		if index == 3 {
-			imageView.image = ImageProcessor.sharedInstance.mergeImages()
-			showImage()
-			nextButton.hidden = true
-			shareButton.hidden = false
-		}
+		refreshMergedImage()
 		
 		textLabel.text = texts[index - 1]
 		
@@ -40,6 +35,22 @@ class ReusableViewController: UIViewController {
 
 		if let rootVC = (UIApplication.sharedApplication().delegate as! AppDelegate).window!.rootViewController as? ViewController {
 			rootViewController = rootVC
+		}
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		refreshMergedImage()
+	}
+	
+	func refreshMergedImage() {
+		if index == 3 {
+			imageView.image = ImageProcessor.sharedInstance.mergeImages()
+			showImage()
+			importButton.hidden = true
+			nextButton.hidden = true
+			shareButton.hidden = false
 		}
 	}
 	
@@ -61,7 +72,9 @@ class ReusableViewController: UIViewController {
 	}
 	
 	func showImage() {
-		importButton.hidden = true
+		importButton.layer.borderColor = UIColor.clearColor().CGColor
+		importButton.setImage(nil, forState: .Normal)
+		
 		imageView.hidden = false
 		nextButton.hidden = false
 	}
