@@ -36,9 +36,9 @@ class ImageProcessor {
 
 	func mergeImages() -> UIImage {
 		
-		UIGraphicsBeginImageContext(backgroundImage.size)
+		UIGraphicsBeginImageContext(overlay.size)
 		
-		let areaSize = CGRect(x: 0, y: 0, width: backgroundImage.size.width, height: backgroundImage.size.height)
+		let areaSize = CGRect(x: 0, y: 0, width: overlay.size.width, height: overlay.size.height)
 		backgroundImage.drawInRect(areaSize)
 		overlay.drawInRect(areaSize)
 		

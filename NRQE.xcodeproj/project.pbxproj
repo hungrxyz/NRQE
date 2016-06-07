@@ -102,6 +102,7 @@
 				TargetAttributes = {
 					FA1E86001CD0EC8900001E5E = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 96HG6E2WJ6;
 					};
 				};
 			};
@@ -257,7 +258,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = NRQE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzzel.NRQE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -268,7 +271,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = NRQE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzzel.NRQE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -294,6 +299,7 @@
 				FA1E86151CD0EC8900001E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
